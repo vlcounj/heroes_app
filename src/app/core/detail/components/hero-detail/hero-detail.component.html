@@ -1,0 +1,7 @@
+<p>hero-detail works!</p>
+<ng-container *ngIf="error; else elseOK">
+    There was an error whilo loading hero detail. Trz again later.
+</ng-container>
+<ng-template #elseOK>
+    {{ hero.id }} | {{ hero.name }} | {{ hero.strength }}
+</ng-template>

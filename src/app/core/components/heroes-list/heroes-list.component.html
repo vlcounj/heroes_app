@@ -1,0 +1,18 @@
+<h2>My Heroes</h2>
+<!-- seznam vsech hrdinu -->
+<div class="list">
+    <mat-button-toggle-group [(ngModel)]="selectedHero" [vertical]="true">
+        <mat-button-toggle *ngFor="let hero of heroes" [value]="hero">
+            {{ hero.id }} | {{ hero.name }} | {{ hero.strength }}
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<div class="my-hero" *ngIf="selectedHero">
+    {{ selectedHero.name }} is my hero
+</div>
+
+<!-- btns -->
+<button class="btn btn-primary d-block my-2" [disabled]="!selectedHero" (click)="goToHeroDetail()">View Details</button>
+<button class="btn btn-secondary d-block my-2" (click)="removeHero()" [disabled]="!selectedHero">Remove hero</button>
+<button class="btn btn-secondary d-block my-2" (click)="addHero()">Add hero</button>

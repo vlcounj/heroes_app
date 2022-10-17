@@ -1,0 +1,24 @@
+.nav {
+    margin-bottom: 24px;
+
+    .link {
+        display: inline-block;
+        margin: 0 5px;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        a {
+            padding: 10px 15px;
+            background: rgba(black, .6);
+            border-radius: 4px;
+            color: wheat !important;
+            text-decoration: none;
+
+            &:hover {
+                background: rgba(black, .8);
+            }
+        }
+    }
+}

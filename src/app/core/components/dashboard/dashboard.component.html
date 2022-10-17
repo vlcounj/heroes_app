@@ -1,0 +1,14 @@
+<h2 class="text-center">Top Heroes</h2>
+<!-- 4 top hrdinove -->
+<div class="text-center">
+    <mat-card class="card text-start" *ngFor="let hero of heroes">
+        <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/detail', hero.id]" class="text-dark link">{{ hero.name }}</a>
+            </mat-card-title>
+            <mat-card-subtitle>ID: {{ hero.id }}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+            Síla hrdiny: {{ hero.strength }}
+        </mat-card-content>
+    </mat-card>
+</div>

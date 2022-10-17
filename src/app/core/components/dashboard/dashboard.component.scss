@@ -1,0 +1,14 @@
+.card {
+    display: inline-block;
+    max-width: 150px;
+    margin: 20px;
+    background: rgba(black, .2);
+
+    .link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
