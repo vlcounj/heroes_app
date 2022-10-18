@@ -3,28 +3,28 @@
 </ng-container>
 <ng-template #elseOK>
     <h2>Hero detail</h2>
-    <form class="form" [formGroup]="formG" (ngSubmit)="onSubmit()">
+    <form class="form info" [formGroup]="formG" (ngSubmit)="onSubmit()">
         <div class="row" id="form-id">
-            <div class="col col-2">
+            <div class="col col-md-2 col-6">
                 ID:
             </div>
-            <div class="col col-2">
+            <div class="col col-md-2 col-6">
                 {{ hero.id }}
             </div>
         </div>
         <div class="row" id="form-name">
-            <div class="col col-2">
+            <div class="col col-md-2 col-6">
                 <label for="name">Name: </label>
             </div>
-            <div class="col col-2">
+            <div class="col col-md-2 col-6">
                 <input id="name" type="text" formControlName="name" required class="form-control form-control-sm">
             </div>
         </div>
         <div class="row" id="form-strength">
-            <div class="col col-2">
+            <div class="col col-md-2 col-6">
                 <label for="strength">Strength: </label>
             </div>
-            <div class="col col-2">
+            <div class="col col-md-2 col-6">
                 <input id="strength" type="number" formControlName="strength" required min="0" max="100"
                     class="form-control form-control-sm">
             </div>

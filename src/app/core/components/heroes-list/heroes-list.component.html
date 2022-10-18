@@ -2,7 +2,7 @@
 <!-- seznam vsech hrdinu -->
 <div class="list">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 heroes">
             <mat-button-toggle-group [(ngModel)]="selectedHero" [vertical]="true" class="w-100">
                 <mat-button-toggle *ngFor="let hero of heroes" [value]="hero" class="toggle p-0">
                     <div class="row w-100 m-0 p-0">
@@ -22,12 +22,8 @@
             </div>
         </div>
     </div>
-
 </div>
-
-
-<div class="my-2">
-    <!-- btns -->
+<div class="my-2 btns">
     <button class="btn btn-primary d-inline-block" [disabled]="!selectedHero" (click)="goToHeroDetail()">
         View Details
     </button>

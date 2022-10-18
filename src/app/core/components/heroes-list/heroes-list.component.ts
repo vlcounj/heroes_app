@@ -93,11 +93,13 @@ export class HeroesListComponent implements OnInit {
         [disabled]="
           data.strength === undefined ||
           data.strength === null ||
-          data.name.trim() === ''
+          data.name.trim() === '' ||
+          data.strength < 0 ||
+          data.strength > 100
         "
         class="btn btn-primary text-white"
       >
-        Ok
+        Add hero
       </button>
     </div>
   `,

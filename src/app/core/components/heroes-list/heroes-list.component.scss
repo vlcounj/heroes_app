@@ -1,3 +1,11 @@
+.list {
+    .heroes {
+        max-height: 70vh;
+        // overflow-x: hidden;
+        overflow: auto;
+    }
+}
+
 .toggle {
 
     .id,
