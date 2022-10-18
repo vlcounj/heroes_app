@@ -14,3 +14,15 @@ $my-theme: mat.define-light-theme((color: (primary: $my-primary, accent: $my-acc
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.strong {
+    font-weight: 900;
+}
+
+.mat-button-toggle-label-content {
+    padding: 0 !important;
+}
+
+.mat-card-title {
+    min-height: 50px;
+}

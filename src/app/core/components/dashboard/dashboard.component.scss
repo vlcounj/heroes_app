@@ -1,14 +1,17 @@
-.card {
+.link {
+    box-shadow: 5px 5px 5px -2px gray;
     display: inline-block;
-    max-width: 150px;
     margin: 20px;
-    background: rgba(black, .2);
+    border-radius: 4px;
 
-    .link {
-        text-decoration: none;
+    &:hover {
+        box-shadow: 5px 5px 5px 2px gray;
+    }
 
-        &:hover {
-            text-decoration: underline;
-        }
+
+    .card {
+        display: inline-block;
+        max-width: 150px;
+        background: rgba(black, .2);
     }
 }

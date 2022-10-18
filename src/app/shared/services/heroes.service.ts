@@ -6,15 +6,15 @@ import { Injectable } from '@angular/core';
 export class HeroesService {
   heroesMock: Hero[] = [
     { id: 1, name: 'Atticus', strength: 8 },
-    { id: 2, name: 'Soren', strength: 70 },
-    { id: 3, name: 'Eleanor', strength: 47 },
+    { id: 2, name: 'Beautiful-Maggot', strength: 70 },
+    { id: 3, name: 'Doctor Magnificent', strength: 47 },
     { id: 4, name: 'Amelia', strength: 75 },
     { id: 5, name: 'Miles', strength: 42 },
-    { id: 6, name: 'Cassius', strength: 74 },
-    { id: 7, name: 'Florence', strength: 42 },
+    { id: 6, name: 'Captain Fairman', strength: 74 },
+    { id: 7, name: 'Agent Wonderful', strength: 42 },
     { id: 8, name: 'Scarlett', strength: 88 },
-    { id: 9, name: 'Audrey', strength: 49 },
-    { id: 10, name: 'Beckett', strength: 50 },
+    { id: 9, name: 'Professor Clean', strength: 49 },
+    { id: 10, name: 'Zlaticabob', strength: 50 },
     // { id: 11, name: 'Malcolm', strength: 93 },
     // { id: 12, name: 'Harper', strength: 36 },
     // { id: 13, name: 'Brooks', strength: 47 },
@@ -36,7 +36,7 @@ export class HeroesService {
   addHero(hero: Hero) {
     const exists = this.heroesMock.find((value) => value.id === hero.id);
 
-    if (exists || hero.id === null) {
+    if (exists || hero.id === null || hero.id === -1) {
       hero.id = Math.max(...this.heroesMock.map((o) => o.id)) + 1;
     }
     this.heroesMock.push(hero);
@@ -63,6 +63,13 @@ export class HeroesService {
     const sortedArr = dupArr.sort((a, b) => b.strength - a.strength);
 
     return sortedArr.slice(0, count);
+  }
+
+  updateHero(hero: Hero) {
+    const index = this.heroesMock.findIndex((value) => value.id === hero.id);
+    if (index !== -1) {
+      this.heroesMock[index] = hero;
+    }
   }
 }
 

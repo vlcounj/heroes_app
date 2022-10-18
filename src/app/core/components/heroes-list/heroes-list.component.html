@@ -1,18 +1,40 @@
 <h2>My Heroes</h2>
 <!-- seznam vsech hrdinu -->
 <div class="list">
-    <mat-button-toggle-group [(ngModel)]="selectedHero" [vertical]="true">
-        <mat-button-toggle *ngFor="let hero of heroes" [value]="hero">
-            {{ hero.id }} | {{ hero.name }} | {{ hero.strength }}
-        </mat-button-toggle>
-    </mat-button-toggle-group>
+    <div class="row">
+        <div class="col-md-5">
+            <mat-button-toggle-group [(ngModel)]="selectedHero" [vertical]="true" class="w-100">
+                <mat-button-toggle *ngFor="let hero of heroes" [value]="hero" class="toggle p-0">
+                    <div class="row w-100 m-0 p-0">
+                        <div class="id col col-2 text-wrap">{{ hero.id }}</div>
+                        <div class="name col col-6 text-wrap" [strong]="strongHighlight" [caseSensitive]="false"
+                            [innerHTML]="hero.name">
+                        </div>
+                        <div class="strength col col-4 text-wrap">💪 {{ hero.strength }}</div>
+                    </div>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+        <div class="col-md-7 my-4 my-md-0">
+            <div class="my-hero d-flex justify-content-center align-items-center w-100 h-100 h2 text-white bg-dark"
+                (click)="goToHeroDetail()" *ngIf="selectedHero">
+                {{ selectedHero.name }} is my hero
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<div class="my-hero" *ngIf="selectedHero">
-    {{ selectedHero.name }} is my hero
-</div>
 
-<!-- btns -->
-<button class="btn btn-primary d-block my-2" [disabled]="!selectedHero" (click)="goToHeroDetail()">View Details</button>
-<button class="btn btn-secondary d-block my-2" (click)="removeHero()" [disabled]="!selectedHero">Remove hero</button>
-<button class="btn btn-secondary d-block my-2" (click)="addHero()">Add hero</button>
+<div class="my-2">
+    <!-- btns -->
+    <button class="btn btn-primary d-inline-block" [disabled]="!selectedHero" (click)="goToHeroDetail()">
+        View Details
+    </button>
+    <button class="btn btn-secondary d-inline-block mx-4" (click)="removeHero()" [disabled]="!selectedHero">
+        Remove hero
+    </button>
+    <button class="btn btn-secondary d-inline-block" (click)="openDialog()">
+        Add hero
+    </button>
+</div>

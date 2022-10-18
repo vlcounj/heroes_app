@@ -1,0 +1,21 @@
+.toggle {
+
+    .id,
+    .name,
+    .strength {
+        padding: 3px 12px;
+    }
+
+    .id {
+        background: rgba(black, .2);
+    }
+
+    .name {
+        text-align: left;
+    }
+}
+
+.my-hero {
+    border-radius: 4px;
+    cursor: pointer;
+}

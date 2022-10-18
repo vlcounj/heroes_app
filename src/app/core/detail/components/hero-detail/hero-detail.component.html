@@ -1,7 +1,43 @@
-<p>hero-detail works!</p>
 <ng-container *ngIf="error; else elseOK">
     There was an error whilo loading hero detail. Trz again later.
 </ng-container>
 <ng-template #elseOK>
-    {{ hero.id }} | {{ hero.name }} | {{ hero.strength }}
+    <h2>Hero detail</h2>
+    <form class="form" [formGroup]="formG" (ngSubmit)="onSubmit()">
+        <div class="row" id="form-id">
+            <div class="col col-2">
+                ID:
+            </div>
+            <div class="col col-2">
+                {{ hero.id }}
+            </div>
+        </div>
+        <div class="row" id="form-name">
+            <div class="col col-2">
+                <label for="name">Name: </label>
+            </div>
+            <div class="col col-2">
+                <input id="name" type="text" formControlName="name" required class="form-control form-control-sm">
+            </div>
+        </div>
+        <div class="row" id="form-strength">
+            <div class="col col-2">
+                <label for="strength">Strength: </label>
+            </div>
+            <div class="col col-2">
+                <input id="strength" type="number" formControlName="strength" required min="0" max="100"
+                    class="form-control form-control-sm">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-12">
+                <button type="submit" class="btn btn-primary" [disabled]="!formG.valid || !formG.dirty">Submit</button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col col-4">
+                <div class="alert alert-success" role="alert" *ngIf="formSuccess">Sent</div>
+            </div>
+        </div>
+    </form>
 </ng-template>

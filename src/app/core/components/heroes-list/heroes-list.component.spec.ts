@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HeroesListComponent } from './heroes-list.component';
 
@@ -10,7 +11,7 @@ describe('HeroesListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [HeroesListComponent],
-      imports: [RouterTestingModule, HttpClientModule],
+      imports: [RouterTestingModule, HttpClientModule, MatDialogModule],
     }).compileComponents();
   });
 

@@ -1,0 +1,22 @@
+form {
+    .row {
+        > .col {
+            position: relative;
+            height: 35px;
+
+            label {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        display: none;
+        margin: 0;
+    }
+
+}
